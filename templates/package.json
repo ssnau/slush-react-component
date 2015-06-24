@@ -1,0 +1,24 @@
+{
+  "name": "<%= appNameSlug %>",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "test": "mocha -r test.setup.js --compilers js:babel/register",
+    "build": "babel lib --out-dir dist && rm -rf dist/__tests__"
+  },
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>"
+  },
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "jsdom": "^5.4.3",
+    "mocha": "^2.2.5",
+    "sinon": "^1.14.1"
+  },
+  "peerDependencies": {
+    "react": ">0.10"
+  }
+}
